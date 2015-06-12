@@ -39,7 +39,7 @@ matrix = media.Movie("The Matrix",
                      "https://www.youtube.com/watch?v=m8e-FF8MsqU")
 
 movies = [interstellar, avatar, memento, citizen_kane, big_lebowski, matrix]
-#fresh_tomatoes.open_movies_page(movies)
+fresh_tomatoes.open_movies_page(movies)
 #print media.Movie.valid_ratings[0]
 #print media.Movie.__doc__
-print media.Movie.__module__
+#print media.Movie.__module__

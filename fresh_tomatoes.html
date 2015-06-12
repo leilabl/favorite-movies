@@ -1,13 +1,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>My Favorite Movies</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://www.backslash.gr/demos/contenthover-jquery-plugin/jquery.contenthover.js"></script>
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
@@ -35,6 +36,7 @@
             background-color: #EEE;
             cursor: pointer;
         }
+                
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -48,6 +50,23 @@
             top: 0;
             background-color: white;
         }
+
+        .contenthover {
+            padding:20px 20px 10px 20px;
+        }
+	.contenthover, .contenthover h3, contenthover a {
+            color:#fff;
+        }
+	.contenthover h3, .contenthover p {
+            margin:0 0 10px 0; line-height:1.4em; padding:0;
+        }
+	.contenthover a.mybutton {
+            display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+        }
+	.contenthover a.mybutton:hover {
+            background:#34742d
+        }
+		
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
@@ -73,6 +92,14 @@
             $(this).next("div").show("fast", showNext);
           });
         });
+
+        
+        //Display plot on hover
+        $(document).ready(function () {
+            $('.d1').contenthover({overlay_background:'#000', overlay_opacity:0.8});
+        });
+         		
+
     </script>
 </head>
 
@@ -105,35 +132,86 @@
     <div class="container">
       
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="0vxOhd4qlnA" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <img class="d1" src="http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>Interstellar</h2>
 </div>
 
+
+
+
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5PSNL1qE6VY" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
+    <img class="d1" src="http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>Avatar</h2>
 </div>
 
+
+
+
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="0vS0E9bBSL0" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTc4MjUxNDAwN15BMl5BanBnXkFtZTcwMDMwNDg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg" width="220" height="342">
+    <img class="d1" src="http://ia.media-imdb.com/images/M/MV5BMTc4MjUxNDAwN15BMl5BanBnXkFtZTcwMDMwNDg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>Memento</h2>
 </div>
 
+
+
+
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="zyv19bg0scg" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTQ2Mjc1MDQwMl5BMl5BanBnXkFtZTcwNzUyOTUyMg@@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
+    <img class="d1" src="http://ia.media-imdb.com/images/M/MV5BMTQ2Mjc1MDQwMl5BMl5BanBnXkFtZTcwNzUyOTUyMg@@._V1_SY317_CR0,0,214,317_AL_.jpg" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>Citizen Kane</h2>
 </div>
 
+
+
+
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="cd-go0oBF4Y" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTQ0NjUzMDMyOF5BMl5BanBnXkFtZTgwODA1OTU0MDE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <img class="d1" src="http://ia.media-imdb.com/images/M/MV5BMTQ0NjUzMDMyOF5BMl5BanBnXkFtZTgwODA1OTU0MDE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>The Big Lebowski</h2>
 </div>
 
+
+
+
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="m8e-FF8MsqU" data-toggle="modal" data-target="#trailer">
-    <img src="http://ia.media-imdb.com/images/M/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <img class="d1" src="http://ia.media-imdb.com/images/M/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX214_AL_.jpg" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>The Matrix</h2>
 </div>
 
+
+
+
     </div>
+
+
+
   </body>
 </html>

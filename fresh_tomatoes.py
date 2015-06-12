@@ -6,13 +6,14 @@ import re
 main_page_head = '''
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>My Favorite Movies</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://www.backslash.gr/demos/contenthover-jquery-plugin/jquery.contenthover.js"></script>
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
@@ -40,6 +41,7 @@ main_page_head = '''
             background-color: #EEE;
             cursor: pointer;
         }
+                
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -53,6 +55,23 @@ main_page_head = '''
             top: 0;
             background-color: white;
         }
+
+        .contenthover {
+            padding:20px 20px 10px 20px;
+        }
+	.contenthover, .contenthover h3, contenthover a {
+            color:#fff;
+        }
+	.contenthover h3, .contenthover p {
+            margin:0 0 10px 0; line-height:1.4em; padding:0;
+        }
+	.contenthover a.mybutton {
+            display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+        }
+	.contenthover a.mybutton:hover {
+            background:#34742d
+        }
+		
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
@@ -78,6 +97,14 @@ main_page_head = '''
             $(this).next("div").show("fast", showNext);
           });
         });
+
+        
+        //Display plot on hover
+        $(document).ready(function () {
+            $('.d1').contenthover({overlay_background:'#000', overlay_opacity:0.8});
+        });
+         		
+
     </script>
 </head>
 '''
@@ -113,6 +140,9 @@ main_page_content = '''
     <div class="container">
       {movie_tiles}
     </div>
+
+
+
   </body>
 </html>
 '''
@@ -120,9 +150,17 @@ main_page_content = '''
 # A single movie entry html template
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
+    <img class="d1" src="{poster_image_url}" width="220" height="342">
+    <div class="contenthover">
+        <h3>Lorem ipsum dolor</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
+        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+    </div>
     <h2>{movie_title}</h2>
 </div>
+
+
+
 '''
 
 def create_movie_tiles_content(movies):
