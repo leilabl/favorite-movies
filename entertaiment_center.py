@@ -1,5 +1,6 @@
-import fresh_tomatoes
 import media
+import fresh_tomatoes
+
 
 
 interstellar = media.Movie("Interstellar",
@@ -43,3 +44,4 @@ fresh_tomatoes.open_movies_page(movies)
 #print media.Movie.valid_ratings[0]
 #print media.Movie.__doc__
 #print media.Movie.__module__
+#print (matrix.movie_storyline)

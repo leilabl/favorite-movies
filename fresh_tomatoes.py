@@ -6,7 +6,7 @@ import re
 main_page_head = '''
 <head>
     <meta charset="utf-8">
-    <title>My Favorite Movies</title>
+    <title>My Fresh Tomatoes</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -33,15 +33,11 @@ main_page_head = '''
             width: 100%;
             height: 100%;
         }
-        .movie-tile {
+        .movie-tile {            
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover {
-            background-color: #EEE;
-            cursor: pointer;
-        }
-                
+                        
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -56,7 +52,12 @@ main_page_head = '''
             background-color: white;
         }
 
+        div.ch_element.ch_wrapper{
+            margin: 0 auto;
+        }
+
         .contenthover {
+            text-align: left;
             padding:20px 20px 10px 20px;
         }
 	.contenthover, .contenthover h3, contenthover a {
@@ -66,7 +67,15 @@ main_page_head = '''
             margin:0 0 10px 0; line-height:1.4em; padding:0;
         }
 	.contenthover a.mybutton {
-            display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+            text-decoration: none;
+            display:block;
+            float:left;
+            padding:5px 10px;
+            background:#3c9632;
+            color:#fff;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
         }
 	.contenthover a.mybutton:hover {
             background:#34742d
@@ -81,7 +90,7 @@ main_page_head = '''
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.movie-tile', function (event) {
+        $(document).on('click', '.mybutton', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -96,9 +105,7 @@ main_page_head = '''
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
-        });
-
-        
+        });      
         //Display plot on hover
         $(document).ready(function () {
             $('.d1').contenthover({overlay_background:'#000', overlay_opacity:0.8});
@@ -132,7 +139,7 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">My Fresh Tomatoes</a>
           </div>
         </div>
       </div>
@@ -149,12 +156,11 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" >
     <img class="d1" src="{poster_image_url}" width="220" height="342">
     <div class="contenthover">
-        <h3>Lorem ipsum dolor</h3>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pulvinar ante quis augue lobortis volutpat. </p>
-        <p><a href="#" class="mybutton">Lorem ipsum</a></p>
+        <p>Movie storyline goes here some more Movie storyline goes here Movie storyline goes here Movie storyline goes here</p>
+        <p><a href="#" class="mybutton" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">Play Trailer</a></p>
     </div>
     <h2>{movie_title}</h2>
 </div>
