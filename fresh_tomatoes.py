@@ -11,6 +11,7 @@ main_page_head = '''
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Alice|Roboto:500' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="http://www.backslash.gr/demos/contenthover-jquery-plugin/jquery.contenthover.js"></script>
@@ -55,6 +56,29 @@ main_page_head = '''
         div.ch_element.ch_wrapper{
             margin: 0 auto;
         }
+        .navbar-brand{
+            background: url(tomato-icon.png) no-repeat top left;
+            background-size: contain;
+            height: 40px;
+            width: 600px;
+            margin-top: 5px;
+            margin-left: 25px;
+            font-family: 'Alice', serif;
+            color: #fff !important;
+            text-indent: 45px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover{
+            color: #a8a8a8 !important;
+        }
+
+        h2{
+            font-family: 'Roboto', sans-serif;
+        }
+
+
 
         .contenthover {
             text-align: left;
