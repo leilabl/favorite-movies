@@ -1,6 +1,6 @@
+import random
 import media
 import fresh_tomatoes
-
 
 
 interstellar = media.Movie("Interstellar",
@@ -10,7 +10,7 @@ interstellar = media.Movie("Interstellar",
 
 
 avatar = media.Movie("Avatar",
-                     "A Paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home",
+                     "A Paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
                      "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SY317_CR0,0,214,317_AL_.jpg",
                      "https://www.youtube.com/watch?v=5PSNL1qE6VY")
 
@@ -39,8 +39,43 @@ matrix = media.Movie("The Matrix",
                      "http://ia.media-imdb.com/images/M/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX214_AL_.jpg",
                      "https://www.youtube.com/watch?v=m8e-FF8MsqU")
 
-movies = [interstellar, avatar, memento, citizen_kane, big_lebowski, matrix]
-fresh_tomatoes.open_movies_page(movies)
+_2001 = media.Movie("2001: A Space Odyssey",
+                    "Humanity finds a mysterious, obviously artificial, object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
+                    "http://ia.media-imdb.com/images/M/MV5BNDYyMDgxNDQ5Nl5BMl5BanBnXkFtZTcwMjc1ODg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg",
+                    "https://www.youtube.com/watch?v=lfF0vxKZRhc")
+
+pulp_fiction = media.Movie("Pulp Fiction",
+                "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "http://ia.media-imdb.com/images/M/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SY317_CR4,0,214,317_AL_.jpg",
+                "https://www.youtube.com/watch?v=wZBfmBvvotE")
+
+casablanca = media.Movie("Casablanca",
+              "Set in unoccupied Africa during the early days of World War II: An American expatriate meets a former lover, with unforeseen complications.",
+              "http://ia.media-imdb.com/images/M/MV5BMjQwNDYyNTk2N15BMl5BanBnXkFtZTgwMjQ0OTMyMjE@._V1_SX214_AL_.jpg",
+              "https://www.youtube.com/watch?v=EJvlGh_FgcI")
+
+donnie_darko = media.Movie("Donnie Darko",
+                "A troubled teenager is plagued by visions of a large bunny rabbit that manipulates him to commit a series of crimes, after narrowly escaping a bizarre accident.",
+                "http://ia.media-imdb.com/images/M/MV5BMTczMzE4Nzk3N15BMl5BanBnXkFtZTcwNDg5Mjc4NA@@._V1_SX214_AL_.jpg",
+                "https://www.youtube.com/watch?v=ZZyBaFYFySk")
+
+trainspotting = media.Movie("Trainspotting",
+                 "Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out, despite the allure of the drugs and influence of friends.",
+                 "http://ia.media-imdb.com/images/M/MV5BMTg2MzcxNTY3NV5BMl5BanBnXkFtZTgwOTQ5NDQxMDE@._V1_SX214_AL_.jpg",
+                 "https://www.youtube.com/watch?v=GmQqhuKmECc")
+
+neverending_story = media.Movie("The NeverEnding Story",
+                     "A troubled boy dives into a wonderous fantasy world through the pages of a mysterious book.",
+                     "http://ia.media-imdb.com/images/M/MV5BMTI3MDA3NTQ0MF5BMl5BanBnXkFtZTcwNDEwMDMyMQ@@._V1_SY317_CR3,0,214,317_AL_.jpg",
+                     "https://www.youtube.com/watch?v=UeFni9dOv7c")
+
+movies = [interstellar, avatar, memento, citizen_kane, big_lebowski, matrix, _2001, pulp_fiction, casablanca, donnie_darko, trainspotting, neverending_story]
+def shuffle(x):
+    x = list(x)
+    random.shuffle(x)
+    return x
+#print shuffle(movies)
+fresh_tomatoes.open_movies_page(shuffle(movies))
 #print media.Movie.valid_ratings[0]
 #print media.Movie.__doc__
 #print media.Movie.__module__

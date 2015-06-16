@@ -77,8 +77,10 @@ main_page_head = '''
         h2{
             font-family: 'Roboto', sans-serif;
         }
-
-
+        p{
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+        }
 
         .contenthover {
             text-align: left;
@@ -88,7 +90,7 @@ main_page_head = '''
             color:#fff;
         }
 	.contenthover h3, .contenthover p {
-            margin:0 0 10px 0; line-height:1.4em; padding:0;
+            margin:0 0 10px 0; line-height:1.5em; padding:0;
         }
 	.contenthover a.mybutton {
             text-decoration: none;
