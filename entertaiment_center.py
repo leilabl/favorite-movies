@@ -44,4 +44,4 @@ fresh_tomatoes.open_movies_page(movies)
 #print media.Movie.valid_ratings[0]
 #print media.Movie.__doc__
 #print media.Movie.__module__
-#print (matrix.movie_storyline)
+#print (matrix.storyline)
